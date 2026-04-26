@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OverOrUnder - AI-powered football predictions and live match signals across 19 leagues. 53 rules + Claude AI analysis with 70%+ confidence threshold.">
+    <meta name="description" content="OverUnder - AI-powered football predictions and live match signals across 19 leagues. 53 rules + Claude AI analysis with 70%+ confidence threshold.">
     <meta name="keywords" content="football predictions, soccer tips, live signals, match analysis, betting tips, sports predictions">
     <meta name="author" content="AEA Software">
-    <title>OverOrUnder - Football Prediction App</title>
+    <title>OverUnder - Football Prediction App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -229,66 +229,176 @@
             flex-direction: column;
         }
 
-        .phone-header {
-            padding: 50px 20px 15px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        .phone-statusbar {
+            height: 38px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 6px;
+            font-size: 0.7em;
+            font-weight: 700;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 0.04em;
         }
 
-        .phone-header h3 {
-            font-size: 1.1em;
-            font-weight: 700;
+        .phone-topbar {
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 1.05em;
+            letter-spacing: -0.01em;
+        }
+        .app-logo .lg-over { color: #ffffff; }
+        .app-logo .lg-slash { color: #4a90ff; padding: 0 1px; }
+        .app-logo .lg-under { color: #4a90ff; }
+
+        .topbar-pills {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pill-tier {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.6em;
+            font-weight: 900;
+            font-family: 'SF Mono', Menlo, monospace;
+            background: linear-gradient(135deg, #ffd700, #e69500);
+            color: #1a1a1a;
+            box-shadow: 0 2px 6px rgba(255, 215, 0, 0.35);
+        }
+
+        .pill-streak {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 0.6em;
+            font-weight: 900;
+            font-family: 'SF Mono', Menlo, monospace;
+            background: rgba(255, 149, 0, 0.18);
+            color: #ff9500;
+        }
+
+        .phone-section-title {
+            padding: 14px 14px 8px;
+            font-size: 0.62em;
+            font-weight: 800;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .phone-content {
             flex: 1;
-            padding: 15px;
+            padding: 0 12px 14px;
             overflow: hidden;
         }
 
         .match-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 12px;
+            border-radius: 14px;
+            padding: 11px 13px;
+            margin-bottom: 9px;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
+        .match-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
         .match-league {
-            font-size: 0.7em;
+            font-size: 0.6em;
             color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .match-time {
+            font-size: 0.6em;
+            color: rgba(255,255,255,0.5);
+            font-family: 'SF Mono', Menlo, monospace;
+            font-weight: 700;
         }
 
         .match-teams {
-            font-size: 0.85em;
-            font-weight: 600;
+            font-size: 0.78em;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .match-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
         }
 
         .match-prediction {
             display: inline-block;
             background: var(--gold);
             color: var(--primary-dark);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.7em;
-            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 14px;
+            font-size: 0.6em;
+            font-weight: 800;
+        }
+
+        .match-odd {
+            display: inline-block;
+            font-family: 'SF Mono', Menlo, monospace;
+            background: rgba(255, 149, 0, 0.18);
+            color: #ff9500;
+            padding: 3px 7px;
+            border-radius: 8px;
+            font-size: 0.6em;
+            font-weight: 800;
+        }
+
+        .match-confidence {
+            font-size: 0.6em;
+            font-weight: 800;
+            color: #34c759;
+            font-family: 'SF Mono', Menlo, monospace;
         }
 
         .match-result {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.7em;
-            font-weight: 700;
-            margin-left: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            padding: 3px 8px;
+            border-radius: 14px;
+            font-size: 0.58em;
+            font-weight: 800;
+            margin-left: auto;
         }
 
         .result-win {
             background: var(--green);
             color: white;
+        }
+        .result-pending {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.55);
         }
 
         .floating-badge {
@@ -723,7 +833,7 @@
     <nav>
         <a href="#" class="logo">
             <div class="logo-icon">⚽</div>
-            OverOrUnder
+            OverUnder
         </a>
         <div class="nav-links">
             <a href="#features">Features</a>
@@ -762,31 +872,68 @@
                 </div>
                 <div class="phone-mockup">
                     <div class="phone-screen">
-                        <div class="phone-header">
-                            <h3>Today's Predictions</h3>
+                        <div class="phone-statusbar">9:41</div>
+                        <div class="phone-topbar">
+                            <div class="app-logo">
+                                <span class="lg-over">OVER</span><span class="lg-slash">/</span><span class="lg-under">UNDER</span>
+                            </div>
+                            <div class="topbar-pills">
+                                <span class="pill-streak">🔥 5</span>
+                                <span class="pill-tier">👑 ELITE</span>
+                            </div>
                         </div>
+                        <div class="phone-section-title">Today's Predictions</div>
                         <div class="phone-content">
                             <div class="match-card">
-                                <div class="match-league">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</div>
+                                <div class="match-card-top">
+                                    <span class="match-league">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</span>
+                                    <span class="match-time">21:00</span>
+                                </div>
                                 <div class="match-teams">Arsenal vs Chelsea</div>
-                                <span class="match-prediction">Over 2.5</span>
-                                <span class="match-result result-win">WON ✓</span>
+                                <div class="match-meta-row">
+                                    <span class="match-prediction">2.5 Over</span>
+                                    <span class="match-odd">@1.78</span>
+                                    <span class="match-confidence">85%</span>
+                                    <span class="match-result result-win">WON ✓</span>
+                                </div>
                             </div>
                             <div class="match-card">
-                                <div class="match-league">🇹🇷 Super Lig</div>
+                                <div class="match-card-top">
+                                    <span class="match-league">🇹🇷 Süper Lig</span>
+                                    <span class="match-time">19:00</span>
+                                </div>
                                 <div class="match-teams">Galatasaray vs Fenerbahçe</div>
-                                <span class="match-prediction">BTTS</span>
-                                <span class="match-result result-win">WON ✓</span>
+                                <div class="match-meta-row">
+                                    <span class="match-prediction">BTTS Yes</span>
+                                    <span class="match-odd">@1.62</span>
+                                    <span class="match-confidence">78%</span>
+                                    <span class="match-result result-win">WON ✓</span>
+                                </div>
                             </div>
                             <div class="match-card">
-                                <div class="match-league">🇪🇸 La Liga</div>
+                                <div class="match-card-top">
+                                    <span class="match-league">🇪🇸 La Liga</span>
+                                    <span class="match-time">22:00</span>
+                                </div>
                                 <div class="match-teams">Real Madrid vs Barcelona</div>
-                                <span class="match-prediction">Over 1.5</span>
+                                <div class="match-meta-row">
+                                    <span class="match-prediction">1.5 Over</span>
+                                    <span class="match-odd">@1.28</span>
+                                    <span class="match-confidence">90%</span>
+                                    <span class="match-result result-pending">LIVE</span>
+                                </div>
                             </div>
                             <div class="match-card">
-                                <div class="match-league">🇩🇪 Bundesliga</div>
+                                <div class="match-card-top">
+                                    <span class="match-league">🇩🇪 Bundesliga</span>
+                                    <span class="match-time">20:30</span>
+                                </div>
                                 <div class="match-teams">Bayern vs Dortmund</div>
-                                <span class="match-prediction">Under 3.5</span>
+                                <div class="match-meta-row">
+                                    <span class="match-prediction">3.5 Under</span>
+                                    <span class="match-odd">@1.95</span>
+                                    <span class="match-confidence">72%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -985,7 +1132,7 @@
             <div class="footer-brand">
                 <a href="#" class="logo">
                     <div class="logo-icon">⚽</div>
-                    OverOrUnder
+                    OverUnder
                 </a>
                 <p>Expert football predictions and live match signals. Stay one step ahead in every match.</p>
             </div>
